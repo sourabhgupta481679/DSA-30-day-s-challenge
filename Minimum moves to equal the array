@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int minMoves2(std::vector<int>& nums) {
+        
+        std::sort(nums.begin(), nums.end());
+        
+        int target = nums[nums.size() / 2];
+        
+        // Calculate the total number of moves
+        int res = 0;
+        for (int n : nums) {
+            res += std::abs(n - target);
+        }
+        
+        return res; 
+    }
+};
